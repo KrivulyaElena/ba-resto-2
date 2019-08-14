@@ -533,6 +533,9 @@ button,
       background-size: cover;
       background-repeat: no-repeat; }
 
+.ba-gallery-row {
+  margin-bottom: 2em; }
+
 .ba-gallery-item {
   overflow: hidden;
   height: 50%; }
@@ -717,3 +720,9 @@ button,
   -webkit-transform: translateX(50%);
   -ms-transform: translateX(50%);
   transform: translateX(50%); }
+
+.ba-text-center {
+  text-align: center; }
+
+.map {
+  height: 400px; }

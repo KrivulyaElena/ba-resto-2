@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "imageUrl": "images/dishes-1.jpg",
+        "alt": "img"
+    },
+    {
+        "id": "2",
+        "imageUrl": "images/dishes-2.jpg",
+        "alt": "img"
+    },
+    {
+        "id": "3",
+        "imageUrl": "images/dishes-3.jpg",
+        "alt": "img"
+    }
+]
