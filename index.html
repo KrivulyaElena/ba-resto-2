@@ -508,8 +508,7 @@
                 </div>
             </div>
         </section>
-
-        <section class="ba-contacts">
+        <!-- <section class="ba-contacts">
             <div class="container">
                 <form class="ba-contacts-form">
                     <div class="ba-text-center">
@@ -529,11 +528,22 @@
                     </div>
                 </form>
             </div>
+        </section> -->
+        <section class="ba-section__contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="ba-sub-title">
+                        Contact
+                    </h2>
+                    <div class="ba-contact-select ba-select-wrap">
+                        <select name="" id="choiceRestaurant" class="ba-select">                           
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="map" class="map"></div>
         </section>
     </main>
-    <section id="map" class="map">
-
-    </section>
     <footer class="ba-footer">
         <div class="container">
             <div class="row">
@@ -587,14 +597,12 @@
 
         </div>
     </footer>
-
     <div class="modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="close modal">x</button>
             <div class="modal-content-wrapper"></div>
         </div>
     </div>
-
     <div class="visually-hidden">
         <svg width="0" height="0" style="position:absolute">
             <symbol viewBox="0 0 16 38" id="left-arrow" xmlns="http://www.w3.org/2000/svg">
@@ -686,8 +694,8 @@
             </symbol>
         </svg>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAitMy3OGJePKc6X2t2uWNgn-tZX50LoQA&callback=initMap"
-        async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAitMy3OGJePKc6X2t2uWNgn-tZX50LoQA&callback=initMap"
+        async defer></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script src="js/slick.min.js"></script>

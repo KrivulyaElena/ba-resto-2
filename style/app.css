@@ -725,4 +725,38 @@ button,
   text-align: center; }
 
 .map {
-  height: 400px; }
+  height: 500px; }
+
+.gm-style img {
+  max-height: none;
+  max-width: 100% !important;
+  height: 100% !important; }
+
+.ba-select {
+  -webkit-appearance: none;
+  height: 30px;
+  padding: 0 2em 0 1em;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #1e1e1e; }
+  .ba-select-wrap {
+    position: relative; }
+    .ba-select-wrap:after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 5px 0 5px;
+      border-color: tomato transparent transparent transparent;
+      position: absolute;
+      top: 50%;
+      right: .5em;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      pointer-events: none; }
+    .ba-select-wrap_active:after {
+      border-width: 0 5px 10px 5px;
+      border-color: transparent transparent tomato transparent; }

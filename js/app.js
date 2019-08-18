@@ -133,13 +133,108 @@ $(document).ready(function () {
 
 });
 
+const googleMapsScript = document.createElement('script');
+googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyACjCFeZJB14g3WrR4zW9427PqV6OzSZqc&callback=initMap';
+document.head.appendChild(googleMapsScript);
+
 let map;
 function initMap() {
+    let mapZoom = 6;
+
+
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 50.06693, lng: 36.237155},
-        zoom: 8,
+        center: { lat: 50.06693, lng: 36.237155 },
+        zoom: mapZoom,
     });
+
+    let baOffices = [
+        {
+            city: 'Kharkiv',
+            position: { lat: 50.0006693, lng: 36.237199 },
+            img: 'images/cupcake.svg'
+
+        },
+        {
+            city: 'Poltava',
+            position: { lat: 49.588983, lng: 34.554741 },
+            img: 'images/cupcake.svg'
+
+        },
+        {
+            city: 'Kramatorsk',
+            position: { lat: 48.9009301, lng: 36.5196854 },
+            img: 'images/cupcake.svg'
+
+        },
+        {
+            city: 'Kiev',
+            position: { lat: 50.4637267, lng: 30.4977141 },
+            img: 'images/cupcake.svg'
+
+        },
+
+        {
+            city: 'Ivano-Frakkivsk',
+            position: { lat: 49.917688, lng: 24.702575 },
+            img: 'images/cupcake.svg'
+
+        },
+    ];
+
+    baOffices.forEach(function (office) {
+        var marker = new google.maps.Marker({
+            position: office.position,
+            map: map,
+            title: office.city,
+            icon: {
+                url: office.img,
+                size: new google.maps.Size(32, 32),
+
+            }
+        });
+    })
+
+
+    let restaurantSelect = document.querySelector('#choiceRestaurant');
+    function addRestaurantToSelect() {
+        baOffices.forEach(function (office) {
+            let opt = document.createElement('option');
+            opt.value = office.position.lat + ',' + office.position.lng;
+            opt.innerText = office.city;
+            restaurantSelect.appendChild(opt);
+        })
+
+    };
+
+    addRestaurantToSelect();
+
+    restaurantSelect.addEventListener('change', function () {
+        let coordinate = this.value.split(',');
+        center = new google.maps.LatLng(coordinate[0], coordinate[1]);
+        map.panTo(center);
+        map.setZoom(mapZoom + 3);
+
+    })
+
 }
-const googleMapsScript = document.createElement('script');
- googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBaSe6jdgxnsPBSc7pRB0_MlIoZSRm7aw8&callback=initMap';
- document.head.appendChild(googleMapsScript);
+
+let selects = document.querySelectorAll('.ba-select');
+
+selects.forEach(function (select) {
+    
+    select.addEventListener('click', function () {
+        var selectWrapper = this.parentNode;
+        selectWrapper.classList.toggle('ba-select-wrap_active');
+    });
+    function selectDefault () {
+        var selectWrapper = this.parentNode;
+        selectWrapper.classList.remove('ba-select-wrap_active');
+    };
+   
+    select.addEventListener('change', selectDefault);
+    select.addEventListener('blur', selectDefault);
+
+
+ 
+})
+
